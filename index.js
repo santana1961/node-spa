@@ -85,6 +85,26 @@ server.put('/update/:id', function (req, res, next) {
     res.send('dados atualizados');
   
   }, next);
+
+});
+
+  server.del('/delete/:id', function (req, res, next) {
+
+    const { id } = req.params;
+  
+    knex('rest')
+  
+    .where('id', id)
+  
+    .delete(req.body)
+  
+    .then((dados)=>{
+  
+      if(!dados) return res.send(new errs.BadRequestErrror('Nada foi encontrado'))
+  
+      res.send('dados excluidos.');
+    
+    }, next);
   
 
 });
