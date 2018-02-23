@@ -60,7 +60,7 @@ server.get('/show/:id', function (req, res, next) {
 
   .then((dados)=>{
 
-    if(!dados) return res.send(new errs.BadRequestErrror('Nada foi encontrado'))
+    if(!dados) return res.send(new errs.BadRequestError('Nada foi encontrado'))
 
     res.send(dados);
   
@@ -80,7 +80,7 @@ server.put('/update/:id', function (req, res, next) {
 
   .then((dados)=>{
 
-    if(!dados) return res.send(new errs.BadRequestErrror('Nada foi encontrado'))
+    if(!dados) return res.send(new errs.BadRequestError('Nada foi encontrado'))
 
     res.send('dados atualizados');
   
@@ -100,7 +100,7 @@ server.put('/update/:id', function (req, res, next) {
   
     .then((dados)=>{
   
-      if(!dados) return res.send(new errs.BadRequestErrror('Nada foi encontrado'))
+      if(!dados) return res.send(new errs.BadRequestError('Nada foi encontrado'))
   
       res.send('dados excluidos.');
     
